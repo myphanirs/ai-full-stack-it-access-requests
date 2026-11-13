@@ -1,0 +1,85 @@
+{
+  "mode": "mock",
+  "observation": "Actual saved-fixture replay of IT-001; not an HTTP request or live-model observation.",
+  "provider": "mock",
+  "model_id": null,
+  "model_id_explanation": "No model was invoked. A real provider/model ID cannot be supplied until the live integration is implemented.",
+  "configuration": {
+    "runtime": "Python 3.12",
+    "implementation": "access_requests.mock_provider.MockProvider.extract",
+    "fixture": "tests/mock_responses/it-001.complete.json",
+    "fixture_sha256": "78d40b28df7b10ff530d58294bc8388154a5ea8e904d5a8cb4ff4c1ebdc52cbd",
+    "schema_file": "snapshot.schema.json",
+    "schema_sha256": "2802bed75be35046552b6d23f45447b416b440fc8ba5a62a9d1d50d0eebbc636",
+    "policy_file": "materials/office-policy.md",
+    "policy_sha256": "b949596765aef45377d9f8d0792f9113109b1f811ef4f3be26919c162e1f631a",
+    "credentials": "not loaded; no environment variables read by MockProvider",
+    "network": "not used",
+    "sampling_settings": null,
+    "reference_files_role": "Schema and policy are references for artifact verification/provenance; MockProvider does not apply them."
+  },
+  "request": {
+    "operation": "MockProvider.extract",
+    "document_id": "IT-001.json",
+    "source_sha256": "102a69f8fbc3779ec19fb6c761ad34b0c9a001f845b8df3c808f5a79441fbb10",
+    "arguments": {
+      "message": "Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner."
+    }
+  },
+  "observed_response": {
+    "response_source": "mock",
+    "completion_status": "completed",
+    "extraction": {
+      "request_id": "IT-001",
+      "request_date": "2026-10-22",
+      "kind": "new",
+      "requester": "Maya Chen",
+      "team": "Analytics",
+      "system": "Atlas",
+      "environment": "staging",
+      "permission": "read",
+      "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+      "start_date": "2026-10-23",
+      "end_date": "2026-11-06",
+      "manager": "Priya Shah",
+      "supporting_quotes": [
+        "Maya Chen from Analytics here, with request IT-001 dated 2026-10-22.",
+        "new read access on Atlas in staging from 2026-10-23 to 2026-11-06",
+        "My manager is Priya Shah.",
+        "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle)."
+      ],
+      "issues": []
+    }
+  },
+  "observed_call_count": 1,
+  "implemented_response_handling": [
+    {
+      "behavior": "Assign one saved response to each call under a lock and record the message.",
+      "source": "access_requests/mock_provider.py:MockProvider.extract"
+    },
+    {
+      "behavior": "Optionally signal started and wait for release outside the lock.",
+      "source": "access_requests/mock_provider.py:MockProvider.extract"
+    },
+    {
+      "behavior": "Read JSON from the assigned UTF-8 fixture.",
+      "source": "access_requests/mock_provider.py:MockProvider.extract"
+    },
+    {
+      "behavior": "If error is present, raise MockProviderError using its message.",
+      "source": "access_requests/mock_provider.py:MockProvider.extract"
+    },
+    {
+      "behavior": "Otherwise return the saved reply unchanged, including refusal or interrupted completion markers; these are mock markers, not a supported live-provider protocol.",
+      "source": "access_requests/mock_provider.py:MockProvider.extract"
+    }
+  ],
+  "not_implemented": [
+    "Live provider/HTTP integration and real model configuration",
+    "Extraction prompt and provider request construction",
+    "Completion/schema/evidence validation in the application",
+    "Application routing and output generation",
+    "Durable attempts, retries, refresh, concurrent intake and recovery"
+  ],
+  "scope_limit": "This file documents implemented mock handling only. It does not satisfy the requirement for an example of an implemented live-provider model request. No HTTP endpoint, model ID or provider sampling settings are invented."
+}
