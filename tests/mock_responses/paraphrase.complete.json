@@ -1,0 +1,26 @@
+{
+  "response_source": "mock",
+  "completion_status": "completed",
+  "extraction": {
+    "request_id": "IT-001",
+    "request_date": "2026-10-22",
+    "kind": "new",
+    "requester": "Maya Chen",
+    "team": "Analytics",
+    "system": "Atlas",
+    "environment": "staging",
+    "permission": "read",
+    "business_purpose": "I need to check the weekly conversion dashboard against the changed event definitions before the next reporting cycle.",
+    "start_date": "2026-10-23",
+    "end_date": "2026-11-06",
+    "manager": "Priya Shah",
+    "supporting_quotes": [
+      "Request IT-001, dated 2026-10-22",
+      "Maya Chen on the Analytics team",
+      "new read access to Atlas's staging environment for 2026-10-23 through 2026-11-06",
+      "Priya Shah is my manager",
+      "I need to check the weekly conversion dashboard against the changed event definitions before the next reporting cycle."
+    ],
+    "issues": []
+  }
+}
