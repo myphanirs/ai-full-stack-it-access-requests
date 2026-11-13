@@ -1,0 +1,12 @@
+Create `planning/validation.md` with one row per line of `planning/spec.md`:
+
+   | Spec line | Requirement | Met or not met | Evidence | Note |
+   |---|---|---|---|---|
+
+---
+
+git add planning/validation.md
+
+---
+
+git commit -m "Validation: each spec line met or not met, with evidence"
