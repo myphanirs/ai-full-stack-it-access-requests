@@ -1,0 +1,6 @@
+{
+  "response_source": "mock",
+  "completion_status": "refused",
+  "refusal": "Simulated refusal",
+  "extraction": null
+}
